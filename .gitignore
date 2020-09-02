@@ -36,6 +36,7 @@ local.properties
 .loadpath
 .factorypath
 /src/main/resources/rebel.xml
+release.properties
 
 # External tool builders
 .externalToolBuilders/**
@@ -69,6 +70,7 @@ local.properties
 ######################
 /log/
 /target/
+*/target/
 
 ######################
 # Gradle
