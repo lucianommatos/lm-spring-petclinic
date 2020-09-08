@@ -8,7 +8,7 @@ import com.project.lmspringpetclinic.model.Owner;
 import com.project.lmspringpetclinic.services.OwnerService;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerServiceMap extends AbstractMapService<Owner> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {

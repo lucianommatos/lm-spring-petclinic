@@ -8,7 +8,7 @@ import com.project.lmspringpetclinic.model.Vet;
 import com.project.lmspringpetclinic.services.VetService;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetServiceMap extends AbstractMapService<Vet> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
