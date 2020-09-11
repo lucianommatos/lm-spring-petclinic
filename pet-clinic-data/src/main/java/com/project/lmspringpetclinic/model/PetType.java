@@ -1,6 +1,8 @@
 package com.project.lmspringpetclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity {
+
+	private static final long serialVersionUID = -5529118288028065736L;
 	
 	private String name;
 
