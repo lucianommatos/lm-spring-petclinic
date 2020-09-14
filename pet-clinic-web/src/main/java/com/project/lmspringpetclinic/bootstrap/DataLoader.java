@@ -1,10 +1,13 @@
 package com.project.lmspringpetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.project.lmspringpetclinic.model.Owner;
+import com.project.lmspringpetclinic.model.Pet;
 import com.project.lmspringpetclinic.model.PetType;
 import com.project.lmspringpetclinic.model.Vet;
 import com.project.lmspringpetclinic.services.OwnerService;
@@ -40,14 +43,34 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Luciano");
 		owner1.setLastName("Matos");
+		owner1.setAddress("123 Street X");
+		owner1.setCity("Wexford");
+		owner1.setTelephone("80808080");
 		
-		ownerService.save(owner1);
+		Pet lucianosPet = new Pet();
+		lucianosPet.setPetType(savedCatPetType);
+		lucianosPet.setOwner(owner1);
+		lucianosPet.setBirthDate(LocalDate.now());
+		lucianosPet.setName("Rita");
+		owner1.getPets().add(lucianosPet);
+		
+		ownerService.save(owner1);		
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Thais");
 		owner2.setLastName("Albiero");
+		owner2.setAddress("77 Bellefield Springs");
+		owner2.setCity("Enniscorthy");
+		owner2.setTelephone("909090909");
 		
-		ownerService.save(owner2);
+		Pet thaisPet = new Pet();
+		thaisPet.setPetType(savedDogPetType);
+		thaisPet.setOwner(owner2);
+		thaisPet.setBirthDate(LocalDate.now());
+		thaisPet.setName("Bento");
+		owner2.getPets().add(thaisPet);
+		
+		ownerService.save(owner2);		
 		
 		System.out.println("Loaded Owners...");
 		
@@ -63,8 +86,7 @@ public class DataLoader implements CommandLineRunner {
 		
 		vetService.save(vet2);
 		
-		System.out.println("Loaded Vets...");
-		
+		System.out.println("Loaded Vets...");		
 	}
 
 }
