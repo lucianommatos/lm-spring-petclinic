@@ -1,9 +1,14 @@
 package com.project.lmspringpetclinic.model;
 
-public class PetType extends BaseEntity {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-	private static final long serialVersionUID = -5529118288028065736L;
+@Entity
+@Table(name = "types")
+public class PetType extends BaseEntity {
 	
+	@Column(name = "name")
 	private String name;
 
 	public String getName() {
