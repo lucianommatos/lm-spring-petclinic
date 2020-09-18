@@ -10,11 +10,11 @@ import com.project.lmspringpetclinic.services.SpecialityService;
 import com.project.lmspringpetclinic.services.VetService;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet> implements VetService {
+public class VetMapService extends AbstractMapService<Vet> implements VetService {
 	
 	private final SpecialityService specialityService;	
 	
-	public VetServiceMap(SpecialityService specialityService) {
+	public VetMapService(SpecialityService specialityService) {
 		this.specialityService = specialityService;
 	}
 
